@@ -1,5 +1,5 @@
 import app from "./app";
-import { setDataSourceConfig } from "./data-source";
+import setDataSourceConfig from "./data-source";
 
 (async () => {
   await setDataSourceConfig.initialize().catch((err) => {
