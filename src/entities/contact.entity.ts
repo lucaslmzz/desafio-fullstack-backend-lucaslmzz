@@ -13,10 +13,10 @@ class Contact {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ length: 45 })
+  @Column({ length: 100 })
   name: string;
 
-  @Column({ length: 45, unique: true })
+  @Column({ length: 100, unique: true })
   email: string;
 
   @Column({ length: 15 })
