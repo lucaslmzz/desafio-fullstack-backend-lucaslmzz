@@ -4,6 +4,8 @@ import path from "path";
 import { DataSource, DataSourceOptions } from "typeorm";
 import { Client } from "./entities/client.entity";
 import { Contact } from "./entities/contact.entity";
+import { InitialMigration1680197707301 } from "./migrations/1680197707301-InitialMigration";
+import { Migration1680198225660 } from "./migrations/1680198225660-Migration";
 
 const setDataSourceConfig = (): DataSourceOptions => {
   const entitiesPath: string = path.join(__dirname, "./entities/**.{js,ts}");
@@ -18,8 +20,8 @@ const setDataSourceConfig = (): DataSourceOptions => {
     return {
       type: "postgres",
       url: process.env.DATABASE_URL,
-      entities: [entitiesPath],
-      migrations: [migrationsPath],
+      entities: [Client, Contact],
+      migrations: [InitialMigration1680197707301, Migration1680198225660],
     };
   }
 
@@ -28,7 +30,7 @@ const setDataSourceConfig = (): DataSourceOptions => {
       type: "sqlite",
       database: ":memory:",
       synchronize: true,
-      entities: [entitiesPath],
+      entities: [Client, Contact],
     };
   }
 
@@ -41,8 +43,8 @@ const setDataSourceConfig = (): DataSourceOptions => {
     database: process.env.DATABASE,
     synchronize: false,
     logging: true,
-    entities: [entitiesPath],
-    migrations: [migrationsPath],
+    entities: [Client, Contact],
+    migrations: [InitialMigration1680197707301, Migration1680198225660],
   };
 };
 
