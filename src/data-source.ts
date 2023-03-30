@@ -6,13 +6,10 @@ import { Client } from "./entities/client.entity";
 import { Contact } from "./entities/contact.entity";
 
 const setDataSourceConfig = (): DataSourceOptions => {
-  const entitiesPath: string = path.join(
-    __dirname,
-    ".dist/entities/**.{js,ts}"
-  );
+  const entitiesPath: string = path.join(__dirname, "./entities/**.{js,ts}");
   const migrationsPath: string = path.join(
     __dirname,
-    ".dist/migrations/**.{js,ts}"
+    "./migrations/**.{js,ts}"
   );
 
   const nodeEnv = process.env.NODE_ENV;
