@@ -7,6 +7,7 @@ import {
   OneToMany,
   DeleteDateColumn,
   BeforeInsert,
+  JoinColumn,
 } from "typeorm";
 import { Contact } from "./contact.entity";
 
@@ -37,6 +38,7 @@ class Client {
   deletedAt: Date;
 
   @OneToMany(() => Contact, (contact) => contact.client)
+  @JoinColumn()
   contact: Contact[];
 
   @BeforeInsert()

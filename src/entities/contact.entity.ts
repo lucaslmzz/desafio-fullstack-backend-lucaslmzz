@@ -5,6 +5,7 @@ import {
   CreateDateColumn,
   OneToMany,
   ManyToOne,
+  JoinColumn,
 } from "typeorm";
 import { Client } from "./client.entity";
 
@@ -25,7 +26,8 @@ class Contact {
   @CreateDateColumn()
   createdAt: string;
 
-  @ManyToOne(() => Client)
+  @ManyToOne(() => Client, (client) => client.contact)
+  @JoinColumn()
   client: Client;
 }
 
