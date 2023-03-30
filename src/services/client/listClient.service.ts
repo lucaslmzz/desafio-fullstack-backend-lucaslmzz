@@ -1,5 +1,6 @@
 import { Client } from "../../entities/client.entity";
-import { setDataSourceConfig } from "../../data-source";
+import setDataSourceConfig from "../../data-source";
+
 import { listClientSchema } from "../../schemas/clients.schema";
 
 const listClientService = async (): Promise<Client[] | any> => {

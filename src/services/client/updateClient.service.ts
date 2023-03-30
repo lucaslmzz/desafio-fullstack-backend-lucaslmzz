@@ -1,4 +1,5 @@
-import { setDataSourceConfig } from "../../data-source";
+import setDataSourceConfig from "../../data-source";
+
 import { Client } from "../../entities/client.entity";
 import { IClientResponse, IClientUpdate } from "../../interfaces/client";
 import { createClientReturnSchema } from "../../schemas/clients.schema";

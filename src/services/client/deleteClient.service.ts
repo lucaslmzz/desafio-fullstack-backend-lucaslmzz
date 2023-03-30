@@ -1,4 +1,4 @@
-import { setDataSourceConfig } from "../../data-source";
+import setDataSourceConfig from "../../data-source";
 import { Client } from "../../entities/client.entity";
 
 export const deleteClientService = async (id: any) => {

@@ -1,5 +1,6 @@
 import { Contact } from "../../entities/contact.entity";
-import { setDataSourceConfig } from "../../data-source";
+import setDataSourceConfig from "../../data-source";
+
 import { listContactSchema } from "../../schemas/contacts.schema";
 
 const listContactService = async (): Promise<Contact[] | any> => {

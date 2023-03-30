@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import { setDataSourceConfig } from "../data-source";
+import setDataSourceConfig from "../data-source";
+
 import { Client } from "../entities/client.entity";
 import { AppError } from "../errors/AppErrors";
 

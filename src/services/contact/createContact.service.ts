@@ -1,4 +1,4 @@
-import { setDataSourceConfig } from "../../data-source";
+import setDataSourceConfig from "../../data-source";
 
 import {
   createContactSchema,

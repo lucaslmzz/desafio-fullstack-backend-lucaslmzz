@@ -1,7 +1,8 @@
 import { compare } from "bcryptjs";
 import jwt from "jsonwebtoken";
 import "dotenv/config";
-import { setDataSourceConfig } from "../../data-source";
+import setDataSourceConfig from "../../data-source";
+
 import { Client } from "../../entities/client.entity";
 
 export const loginService = async ({ email, password }: any): Promise<any> => {

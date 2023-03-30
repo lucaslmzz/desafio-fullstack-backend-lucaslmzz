@@ -1,4 +1,5 @@
-import { setDataSourceConfig } from "../../data-source";
+import setDataSourceConfig from "../../data-source";
+
 import { Contact } from "../../entities/contact.entity";
 
 import { IContactResponse } from "../../interfaces/contacts";
