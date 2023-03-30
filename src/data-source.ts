@@ -6,10 +6,13 @@ import { Client } from "./entities/client.entity";
 import { Contact } from "./entities/contact.entity";
 
 const setDataSourceConfig = (): DataSourceOptions => {
-  const entitiesPath: string = path.join(__dirname, "./entities/**.{js,ts}");
+  const entitiesPath: string = path.join(
+    __dirname,
+    ".dist/entities/**.{js,ts}"
+  );
   const migrationsPath: string = path.join(
     __dirname,
-    "./migrations/**.{js,ts}"
+    ".dist/migrations/**.{js,ts}"
   );
 
   const nodeEnv = process.env.NODE_ENV;
@@ -18,7 +21,7 @@ const setDataSourceConfig = (): DataSourceOptions => {
     return {
       type: "postgres",
       url: process.env.DATABASE_URL,
-      entities: [Client, Contact],
+      entities: [entitiesPath],
       migrations: [migrationsPath],
     };
   }
@@ -28,7 +31,7 @@ const setDataSourceConfig = (): DataSourceOptions => {
       type: "sqlite",
       database: ":memory:",
       synchronize: true,
-      entities: [Client, Contact],
+      entities: [entitiesPath],
     };
   }
 
@@ -41,7 +44,7 @@ const setDataSourceConfig = (): DataSourceOptions => {
     database: process.env.DATABASE,
     synchronize: false,
     logging: true,
-    entities: [Client, Contact],
+    entities: [entitiesPath],
     migrations: [migrationsPath],
   };
 };
