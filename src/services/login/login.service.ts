@@ -31,5 +31,5 @@ export const loginService = async ({ email, password }: any): Promise<any> => {
     expiresIn: "24h",
   });
 
-  return [200, { token } as any];
+  return [200, { token, client } as any];
 };
