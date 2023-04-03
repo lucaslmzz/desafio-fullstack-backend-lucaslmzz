@@ -17,12 +17,10 @@ clientRouter.get("/:id", ensureAuthMiddleware, retrieveClientController);
 clientRouter.patch(
   "/:id",
   ensureAuthMiddleware,
-  isSameClientMiddleware,
   updateClientController
 );
 clientRouter.delete(
   "/:id",
   ensureAuthMiddleware,
-  isSameClientMiddleware,
   deleteClientController
 );
