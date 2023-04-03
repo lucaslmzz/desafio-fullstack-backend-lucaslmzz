@@ -7,6 +7,7 @@ import {
   updateContactController,
 } from "../controllers/contact";
 import ensureAuthMiddleware from "../middlewares/ensureAuth.middleware";
+import { isSameClientContactMiddleware } from "../middlewares/isSameClientContact.middleware";
 
 export const contactRouter = Router();
 
